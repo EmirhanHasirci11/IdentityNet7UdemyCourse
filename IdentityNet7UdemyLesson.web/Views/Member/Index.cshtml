@@ -1,0 +1,40 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center">Kullanıcı bilgileri</h3>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="col-12">
+
+        <img style="width:100%;height:100%;" class="rounded-circle" src="~/userPictures/@Model.PictureUrl" />
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Kullanıcı İsmi</th>
+                <td>@Model.UserName</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td> @Model.Email</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td>@Model.PhoneNumber</td>
+            </tr>
+         @*   <tr>
+                <th>Şehir</th>
+                <td>@Model.City</td>
+            </tr>
+            <tr>
+                <th>Doğum Tarihi</th>
+                <td>@Model.BirthDate.Value.ToShortDateString()</td>
+            </tr>       
+*@
+        </table>
+    </div>
+</div>
+

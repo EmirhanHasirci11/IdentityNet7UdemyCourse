@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IdentityNet7UdemyLesson.web.Areas.Admin.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<h1>UserList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Email
+            </th>
+            <th colspan="3">Tools</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.UserID
+            </td>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                <a class="btn btn-info" action="EditUser" asp-controller="Admin" asp-route-id="@item.UserID" >Güncelle</a>
+                <a class="btn btn-danger" action="DeleteUser" asp-controller="Admin" asp-route-id="@item.UserID" >Sil</a>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

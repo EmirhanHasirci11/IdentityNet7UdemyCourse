@@ -1,0 +1,22 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <ul class="navbar-nav me-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                @User.Identity.Name
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                <li><a class="dropdown-item" asp-action="LogOut" asp-controller="Member" asp-route-returnurl="/Home/Index" >Çıkış Yap</a></li>
+                <li><a class="dropdown-item" asp-action="Index" asp-controller="Member" >Profilim</a></li>
+                <li><a class="dropdown-item" asp-action="PasswordChange" asp-controller="Member" >Şifremi Değiştir</a></li>
+            </ul>
+        </li>
+    </ul>
+}
+
+else
+{
+    <a class="btn btn-outline-success mx-1" asp-controller="Home" asp-action="SignIn">Giriş yap</a>
+    <a class="btn btn-outline-success mx-1" asp-controller="Home" asp-action="SignUp">Kayıt Ol</a>
+}
