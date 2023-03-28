@@ -1,3 +1,3 @@
 # IdentityNet7UdemyLesson
 
-Udemy course from Fatih Çakıroğlu
+Udemy course by Fatih Çakıroğlu
